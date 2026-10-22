@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warung Emak Shodiq - Profil UMKM</title>
+    <!-- Google Fonts: Fraunces, Figtree, Caveat, Space Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Figtree:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+/* =====================================================
+   WARUNG EMAK SHODIQ — tema kantin / warung sekolah
+   Palet diambil dari logo: merah marun, kuning kunyit, krem
+   ===================================================== */
+:root {
+    --maroon: #8E1B16;
+    --maroon-tua: #5E100C;
+    --merah: #C8281E;
+    --kuning: #F5B82E;
+    --kuning-muda: #FFE08A;
+    --krem: #FFF4DB;
+    --kertas: #FFFDF6;
+    --tinta: #2B1710;
+    --papan: #1F362B;
+    --kayu: #8A5A32;
+    --harga: #B91C1C;
+    --font-judul: 'Fraunces', Georgia, serif;
+    --font-isi: 'Figtree', system-ui, sans-serif;
+    --font-tulis: 'Caveat', 'Comic Sans MS', cursive;
+    --font-nota: 'Space Mono', ui-monospace, monospace;
+    /* motif taplak meja kotak-kotak */
+    --gingham:
+        linear-gradient(90deg, rgba(200, 40, 30, .20) 50%, transparent 50%),
+        linear-gradient(rgba(200, 40, 30, .20) 50%, transparent 50%);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+
+body {
+    font-family: var(--font-isi);
+    color: var(--tinta);
+    background-color: var(--krem);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .35 0 0 0 0 .15 0 0 0 .12 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    line-height: 1.65;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main { flex-grow: 1; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+.hidden { display: none !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+.container { max-width: 1160px; margin: 0 auto; padding: 0 1.25rem; }
+
+/* ---------- Tombol ---------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .55rem;
+    font-family: var(--font-isi);
+    font-weight: 800;
+    font-size: 1.45rem;
+    padding: .85rem 1.6rem;
+    border-radius: 999px;
+    border: 0;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform .15s ease, box-shadow .15s ease, filter .2s ease;
+}
+.btn-merah {
+    background: linear-gradient(180deg, var(--merah), var(--maroon));
+    color: #FFF1D6;
+    box-shadow: 0 5px 0 var(--maroon-tua), 0 14px 22px -6px rgba(142, 27, 22, .45);
+}
+.btn-merah:hover { transform: translateY(-2px); filter: brightness(1.08); box-shadow: 0 7px 0 var(--maroon-tua), 0 18px 26px -6px rgba(142, 27, 22, .5); }
+.btn-merah:active { transform: translateY(4px); box-shadow: 0 1px 0 var(--maroon-tua), 0 4px 8px -2px rgba(142, 27, 22, .4); }
+.btn-krem {
+    background: #fff;
+    color: var(--maroon);
+    box-shadow: inset 0 0 0 2px var(--maroon), 0 5px 0 rgba(142, 27, 22, .25);
+}
+.btn-krem:hover { transform: translateY(-2px); background: var(--kuning-muda); }
+.btn-krem:active { transform: translateY(3px); box-shadow: inset 0 0 0 2px var(--maroon), 0 1px 0 rgba(142, 27, 22, .25); }
+.btn-sm { padding: .55rem 1.1rem; font-size: 1.35rem; box-shadow: 0 4px 0 var(--maroon-tua), 0 10px 16px -6px rgba(142, 27, 22, .4); }
+.btn-block { width: 100%; }
+
+/* ---------- Judul bagian ---------- */
+.sec { padding: 5rem 0; position: relative; }
+.sec-head { text-align: center; margin-bottom: 3rem; }
+.sec-eyebrow { font-family: var(--font-tulis); font-size: 1.6rem; font-weight: 700; color: var(--merah); line-height: 1; display: inline-flex; align-items: center; gap: .6rem; }
+.sec-title { font-family: var(--font-judul); font-weight: 900; font-size: clamp(2.1rem, 5.2vw, 3.3rem); line-height: 1.05; letter-spacing: -.02em; color: var(--maroon); margin-top: .3rem; }
+.rickrack {
+    height: 12px; width: 108px; margin: 1rem auto 0;
+    background:
+        linear-gradient(135deg, var(--kuning) 25%, transparent 25%) -6px 0,
+        linear-gradient(225deg, var(--kuning) 25%, transparent 25%) -6px 0;
+    background-size: 12px 12px;
+}
+
+/* =====================================================
+   HEADER — kanopi warung
+   ===================================================== */
+header { position: sticky; top: 0; z-index: 60; background: var(--krem); box-shadow: 0 10px 24px -14px rgba(43, 23, 16, .45); }
+.awning { height: 12px; background: repeating-linear-gradient(90deg, var(--maroon) 0 28px, var(--kuning) 28px 56px); position: relative; }
+.awning::after {
+    content: ''; position: absolute; left: 0; right: 0; top: 100%; height: 14px; z-index: 2; pointer-events: none;
+    background:
+        radial-gradient(circle 14px at 14px 0, var(--maroon) 13.5px, transparent 14.5px) 0 0 / 56px 14px repeat-x,
+        radial-gradient(circle 14px at 42px 0, var(--kuning) 13.5px, transparent 14.5px) 0 0 / 56px 14px repeat-x;
+    filter: drop-shadow(0 3px 2px rgba(43, 23, 16, .25));
+}
+.nav-inner { max-width: 1160px; margin: 0 auto; padding: 1.15rem 1.25rem .6rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.brand { display: flex; align-items: center; gap: .8rem; text-decoration: none; min-width: 0; }
+.brand img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; background: #fff; box-shadow: 0 0 0 3px var(--kuning), 0 0 0 5px var(--maroon); flex-shrink: 0; }
+.brand-title { display: block; font-family: var(--font-judul); font-weight: 900; font-size: 1.2rem; line-height: 1.1; color: var(--maroon); letter-spacing: -.01em; }
+.brand-sub { display: block; font-family: var(--font-tulis); font-size: 1.05rem; font-weight: 600; color: var(--merah); line-height: 1; }
+
+.nav-desktop { display: none; align-items: center; gap: .3rem; }
+.nav-desktop a.nav-link { text-decoration: none; font-weight: 700; font-size: 1.42rem; padding: .5rem .95rem; border-radius: 999px; transition: background .2s, color .2s; }
+.nav-desktop a.nav-link:hover { background: var(--kuning-muda); color: var(--maroon); }
+.btn-admin { display: inline-flex; align-items: center; gap: .45rem; background: var(--tinta); color: var(--kuning); border: 0; font-family: inherit; font-weight: 800; font-size: 1.32rem; padding: .55rem 1.05rem; border-radius: 999px; cursor: pointer; margin-left: .5rem; transition: background .2s, color .2s, transform .15s; }
+.btn-admin:hover { background: var(--maroon); color: #fff; transform: translateY(-1px); }
+
+.nav-mobile-btns { display: flex; align-items: center; gap: .5rem; }
+.icon-btn { width: 42px; height: 42px; border-radius: 50%; border: 0; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem; background: var(--kuning-muda); color: var(--maroon); transition: transform .15s, background .2s; }
+.icon-btn:active { transform: scale(.92); }
+.icon-btn.dark { background: var(--tinta); color: var(--kuning); }
+
+#mobile-menu { background: var(--krem); border-top: 2px dashed rgba(142, 27, 22, .3); padding: .6rem 1.25rem 1rem; }
+#mobile-menu a { display: flex; align-items: center; gap: .7rem; padding: .75rem .4rem; text-decoration: none; font-weight: 700; border-bottom: 1px dotted rgba(43, 23, 16, .25); }
+#mobile-menu a:last-child { border-bottom: 0; }
+#mobile-menu a i { color: var(--merah); width: 1.2rem; text-align: center; }
+
+@media (min-width: 768px) {
+    .nav-desktop { display: flex; }
+    .nav-mobile-btns { display: none; }
+    #mobile-menu { display: none !important; }
+}
+
+/* =====================================================
+   HERO
+   ===================================================== */
+.hero { position: relative; padding: 3.5rem 0 5.5rem; overflow: hidden; background: radial-gradient(circle at 88% 18%, rgba(245, 184, 46, .38), transparent 42%); }
+.hero::before { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 42%; background-image: var(--gingham); background-size: 44px 44px; -webkit-mask-image: linear-gradient(transparent, #000); mask-image: linear-gradient(transparent, #000); pointer-events: none; }
+.hero-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr; gap: 3.5rem; align-items: center; }
+@media (min-width: 920px) { .hero-grid { grid-template-columns: 1.05fr .95fr; gap: 3rem; } .hero { padding: 4.5rem 0 6.5rem; } }
+
+.doodle { position: absolute; color: var(--maroon); opacity: .11; pointer-events: none; z-index: 1; }
+.dd1 { top: 8%; left: 3%; font-size: 3rem; transform: rotate(-18deg); }
+.dd2 { top: 52%; left: 46%; font-size: 2.2rem; transform: rotate(14deg); }
+.dd3 { top: 6%; right: 6%; font-size: 2.6rem; transform: rotate(20deg); }
+.dd4 { bottom: 20%; left: 6%; font-size: 2.4rem; transform: rotate(-8deg); }
+.dd5 { bottom: 12%; right: 4%; font-size: 3rem; transform: rotate(-22deg); }
+
+.papan-nama { display: inline-block; position: relative; transform: rotate(-2deg); background: var(--maroon); color: var(--krem); font-family: var(--font-judul); font-weight: 700; font-size: 1.28rem; letter-spacing: .14em; text-transform: uppercase; padding: .55rem 1.3rem; border-radius: 8px; box-shadow: 0 6px 14px -4px rgba(142, 27, 22, .55); margin-bottom: 1.4rem; }
+.papan-nama::before { content: ''; position: absolute; inset: 4px; border: 1.5px dashed rgba(255, 244, 219, .55); border-radius: 5px; pointer-events: none; }
+
+.hero h1 { font-family: var(--font-judul); font-weight: 900; font-size: clamp(2.8rem, 8vw, 5.2rem); line-height: .98; letter-spacing: -.035em; color: var(--maroon); text-shadow: 3px 3px 0 var(--kuning); margin-bottom: 1.3rem; }
+.hero-slogan { font-size: clamp(1rem, 2.3vw, 1.18rem); line-height: 1.75; color: #5A4034; max-width: 36rem; margin-bottom: 1.9rem; }
+.hero-btns { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.2rem; }
+
+.fakta-grid { display: grid; grid-template-columns: 1fr; gap: .8rem; padding-top: 1.7rem; position: relative; }
+.fakta-grid::before { content: ''; position: absolute; top: 0; left: 0; right: 0; border-top: 3px dotted rgba(142, 27, 22, .4); }
+@media (min-width: 640px) { .fakta-grid { grid-template-columns: repeat(3, 1fr); } }
+.kupon { position: relative; background: var(--kertas); border-radius: 14px; padding: .8rem .95rem; display: flex; align-items: center; gap: .75rem; box-shadow: 0 8px 18px -10px rgba(43, 23, 16, .5); border: 2px dashed rgba(142, 27, 22, .35); transition: transform .25s cubic-bezier(.34, 1.56, .64, 1); }
+.kupon:hover { transform: translateY(-4px) rotate(-1deg); }
+.kupon .ik { width: 40px; height: 40px; border-radius: 50%; background: var(--kuning); color: var(--maroon); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.45rem; }
+.kupon span.tx { font-size: 1.34rem; font-weight: 700; line-height: 1.35; }
+
+/* foto polaroid */
+.foto-wrap { position: relative; width: min(100%, 410px); margin: 0 auto; }
+.sunburst { position: absolute; inset: -46px; border-radius: 50%; z-index: 0; background: repeating-conic-gradient(rgba(245, 184, 46, .62) 0 9deg, rgba(245, 184, 46, .22) 9deg 18deg); -webkit-mask: radial-gradient(circle, #000 52%, transparent 70%); mask: radial-gradient(circle, #000 52%, transparent 70%); animation: putar 70s linear infinite; }
+@keyframes putar { to { transform: rotate(360deg); } }
+.polaroid { position: relative; z-index: 2; background: #fff; padding: 14px 14px 62px; border-radius: 6px; transform: rotate(2.4deg); box-shadow: 0 30px 50px -18px rgba(43, 23, 16, .6), 0 4px 10px rgba(43, 23, 16, .15); }
+.polaroid img { width: 100%; aspect-ratio: 4 / 4.7; object-fit: cover; object-position: center 35%; border-radius: 2px; background: var(--kertas); }
+.polaroid .keterangan { position: absolute; left: 14px; right: 14px; bottom: 12px; text-align: center; font-family: var(--font-tulis); font-size: 1.28rem; font-weight: 700; color: var(--maroon); line-height: 1.05; }
+.tape { position: absolute; width: 112px; height: 30px; background: rgba(245, 184, 46, .78); box-shadow: 0 2px 5px rgba(43, 23, 16, .2); z-index: 5; -webkit-mask: linear-gradient(90deg, transparent 0, #000 4px calc(100% - 4px), transparent 100%); mask: linear-gradient(90deg, transparent 0, #000 4px calc(100% - 4px), transparent 100%); }
+.tape-1 { top: -12px; left: 50%; transform: translateX(-50%) rotate(-3deg); }
+.stempel { position: absolute; z-index: 6; right: -22px; bottom: 44px; width: 112px; height: 112px; border-radius: 50%; background: var(--maroon); color: var(--krem); display: flex; align-items: center; justify-content: center; box-shadow: 0 14px 26px -6px rgba(94, 16, 12, .7); border: 3px dashed rgba(255, 224, 138, .7); }
+.stempel svg { position: absolute; inset: 2px; width: calc(100% - 4px); height: calc(100% - 4px); animation: putar 18s linear infinite; }
+.stempel text { fill: var(--kuning-muda); font-family: var(--font-isi); font-weight: 800; font-size: 12px; }
+.stempel i { font-size: 1.6rem; color: var(--kuning); }
+@media (max-width: 480px) { .stempel { right: -8px; width: 92px; height: 92px; } .sunburst { inset: -26px; } }
+
+/* =====================================================
+   PITA MENU BERJALAN
+   ===================================================== */
+.ticker { background: var(--maroon); color: var(--krem); overflow: hidden; position: relative; padding: .85rem 0; border-top: 4px solid var(--kuning); border-bottom: 4px solid var(--kuning); }
+.ticker::before, .ticker::after { content: ''; position: absolute; top: 0; bottom: 0; width: 60px; z-index: 2; pointer-events: none; }
+.ticker::before { left: 0; background: linear-gradient(90deg, var(--maroon), transparent); }
+.ticker::after { right: 0; background: linear-gradient(-90deg, var(--maroon), transparent); }
+.ticker-track { display: flex; width: max-content; animation: jalan 40s linear infinite; align-items: center; }
+.ticker-track span { font-family: var(--font-judul); font-style: italic; font-weight: 700; font-size: 1.2rem; white-space: nowrap; padding: 0 1.2rem; }
+.ticker-track i { font-size: 1.35rem; color: var(--kuning); }
+@keyframes jalan { to { transform: translateX(-50%); } }
+
+/* =====================================================
+   TENTANG — papan tulis kantin
+   ===================================================== */
+#tentang { padding: 5rem 0 5.5rem; }
+.papan-frame { background: linear-gradient(135deg, #A0703F, #7A4A25 45%, #9A6A3C 70%, #7A4A25); padding: 16px; border-radius: 26px; box-shadow: 0 40px 70px -30px rgba(43, 23, 16, .7), inset 0 2px 0 rgba(255, 255, 255, .25); }
+.papan {
+    position: relative; border-radius: 12px; padding: 3.2rem 1.5rem 3.4rem; color: #FBF5E4; overflow: hidden;
+    background:
+        radial-gradient(ellipse 45% 30% at 18% 22%, rgba(255, 255, 255, .06), transparent 70%),
+        radial-gradient(ellipse 40% 25% at 82% 70%, rgba(255, 255, 255, .05), transparent 70%),
+        radial-gradient(ellipse 60% 40% at 50% 100%, rgba(0, 0, 0, .25), transparent 70%),
+        var(--papan);
+    box-shadow: inset 0 0 70px rgba(0, 0, 0, .45);
+}
+@media (min-width: 768px) { .papan { padding: 3.6rem 3rem 3.8rem; } }
+.papan .sec-eyebrow { color: var(--kuning); }
+.papan .sec-title { color: #FFF9EA; }
+.papan .rickrack { background: linear-gradient(135deg, rgba(255, 249, 234, .75) 25%, transparent 25%) -6px 0, linear-gradient(225deg, rgba(255, 249, 234, .75) 25%, transparent 25%) -6px 0; background-size: 12px 12px; }
+.chalk-doodle { position: absolute; color: rgba(255, 249, 234, .09); pointer-events: none; }
+.cd1 { top: 14px; left: 18px; font-size: 2.6rem; transform: rotate(-14deg); }
+.cd2 { bottom: 16px; right: 22px; font-size: 3rem; transform: rotate(12deg); }
+
+.tentang-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: start; position: relative; z-index: 2; }
+@media (min-width: 920px) { .tentang-grid { grid-template-columns: 1fr 1fr; gap: 3.5rem; } }
+.cerita { font-size: clamp(1.02rem, 2.2vw, 1.15rem); line-height: 1.9; color: rgba(251, 245, 228, .94); margin-bottom: 2.2rem; }
+.cerita::first-letter { font-family: var(--font-judul); font-weight: 900; font-size: 3.4rem; line-height: .8; float: left; margin: .35rem .6rem 0 0; color: var(--kuning); }
+
+.nota-wrap { filter: drop-shadow(0 14px 14px rgba(0, 0, 0, .4)); transform: rotate(-1.4deg); max-width: 400px; }
+.nota { background: var(--kertas); color: var(--tinta); font-family: var(--font-nota); padding: 1.4rem 1.5rem 2.4rem; -webkit-mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / 18px 100%; mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / 18px 100%; border-radius: 6px 6px 0 0; }
+.nota h3 { font-weight: 700; font-size: 1.45rem; text-transform: uppercase; letter-spacing: .08em; text-align: center; color: var(--maroon); padding-bottom: .7rem; border-bottom: 2px dashed rgba(43, 23, 16, .45); margin-bottom: .9rem; }
+.nota h3 i { margin-right: .4rem; }
+.nota-row { display: flex; align-items: baseline; gap: .5rem; font-size: 1.32rem; padding: .22rem 0; }
+.nota-row .dots { flex: 1; border-bottom: 2px dotted rgba(43, 23, 16, .4); transform: translateY(-3px); min-width: 12px; }
+.nota-row b { font-weight: 700; }
+.nota-foot { margin-top: .9rem; padding-top: .7rem; border-top: 2px dashed rgba(43, 23, 16, .45); text-align: center; font-size: 1.22rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(43, 23, 16, .65); }
+
+.keunggulan-title { font-family: var(--font-tulis); font-size: 2.4rem; font-weight: 700; color: var(--kuning); line-height: 1; margin-bottom: 1.4rem; }
+#about-advantages { display: flex; flex-direction: column; gap: 1.5rem; }
+.catatan { position: relative; display: flex; gap: 1rem; align-items: flex-start; padding: 1.4rem 1.3rem 1.2rem; color: var(--tinta); border-radius: 4px 4px 14px 4px; box-shadow: 0 14px 22px -10px rgba(0, 0, 0, .6); transition: transform .3s cubic-bezier(.34, 1.56, .64, 1); }
+.catatan::before { content: ''; position: absolute; top: -9px; left: 50%; width: 18px; height: 18px; margin-left: -9px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #ff7a6b, var(--merah) 55%, var(--maroon-tua)); box-shadow: 0 3px 4px rgba(0, 0, 0, .4); }
+.catatan:nth-child(1) { background: var(--kuning-muda); transform: rotate(-1.6deg); }
+.catatan:nth-child(2) { background: var(--kertas); transform: rotate(1.2deg); }
+.catatan:nth-child(3) { background: #FFD3C2; transform: rotate(-.8deg); }
+.catatan:hover { transform: rotate(0) translateY(-5px) scale(1.02); }
+.catatan .nomor { flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: var(--maroon); color: var(--kuning); display: flex; align-items: center; justify-content: center; font-size: 1.05rem; box-shadow: 0 4px 0 var(--maroon-tua); }
+.catatan h4 { font-family: var(--font-judul); font-weight: 800; font-size: 1.12rem; line-height: 1.25; margin-bottom: .25rem; color: var(--maroon-tua); }
+.catatan p { font-size: 1.36rem; line-height: 1.55; color: #5A4034; }
+
+/* =====================================================
+   PRODUK — kartu menu di atas taplak
+   ===================================================== */
+#produk { padding: 5.5rem 0 6rem; background-image: var(--gingham); background-size: 52px 52px; background-color: var(--krem); position: relative; }
+#produk::before, #produk::after { content: ''; position: absolute; left: 0; right: 0; height: 14px; background: linear-gradient(135deg, var(--maroon) 25%, transparent 25%) -7px 0, linear-gradient(225deg, var(--maroon) 25%, transparent 25%) -7px 0; background-size: 14px 14px; }
+#produk::before { top: 0; }
+#produk::after { bottom: 0; transform: scaleY(-1); }
+.catatan-format { display: inline-block; margin-top: 1.3rem; font-family: var(--font-nota); font-size: 1.26rem; color: #5A4034; background: var(--kertas); padding: .55rem 1rem; border-radius: 6px; box-shadow: 0 6px 12px -6px rgba(43, 23, 16, .5); transform: rotate(-1deg); border: 1px dashed rgba(43, 23, 16, .4); }
+
+.produk-grid { display: grid; grid-template-columns: 1fr; gap: 2.2rem 1.6rem; }
+@media (min-width: 640px) { .produk-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 980px) { .produk-grid { grid-template-columns: repeat(3, 1fr); gap: 2.6rem 2rem; } }
+
+.menu-card { position: relative; background: #fff; border-radius: 22px; display: flex; flex-direction: column; box-shadow: 0 18px 30px -16px rgba(43, 23, 16, .55), 0 2px 0 rgba(43, 23, 16, .05); transition: transform .35s cubic-bezier(.34, 1.4, .64, 1), box-shadow .35s ease; }
+.menu-card:nth-child(odd) { transform: rotate(-.7deg); }
+.menu-card:nth-child(even) { transform: rotate(.7deg); }
+.menu-card:hover { transform: rotate(0) translateY(-8px); box-shadow: 0 30px 40px -18px rgba(142, 27, 22, .55); }
+.menu-foto { position: relative; margin: 12px 12px 0; border-radius: 14px; overflow: visible; }
+.menu-foto img { width: 100%; height: 220px; object-fit: cover; border-radius: 14px; background: var(--kertas); }
+.tape-card { top: -14px; left: 50%; width: 92px; height: 26px; transform: translateX(-50%) rotate(2deg); background: rgba(142, 27, 22, .55); }
+.menu-card:nth-child(even) .tape-card { transform: translateX(-50%) rotate(-3deg); background: rgba(245, 184, 46, .8); }
+.menu-berat { position: absolute; right: -6px; bottom: -14px; z-index: 6; display: inline-flex; align-items: center; gap: .35rem; background: var(--kuning); color: var(--maroon-tua); font-weight: 800; font-size: 1.24rem; padding: .35rem .8rem; border-radius: 999px; transform: rotate(-4deg); box-shadow: 0 6px 10px -4px rgba(43, 23, 16, .5); border: 2px dashed rgba(94, 16, 12, .45); }
+.menu-body { padding: 1.5rem 1.3rem .5rem; flex-grow: 1; }
+.menu-nama { font-family: var(--font-judul); font-weight: 900; font-size: 1.4rem; line-height: 1.15; letter-spacing: -.01em; color: var(--maroon); margin-bottom: .5rem; }
+.menu-desc { font-size: 1.4rem; line-height: 1.65; color: #5A4034; }
+.menu-foot { display: flex; align-items: center; justify-content: space-between; gap: .8rem; margin: .5rem 1.2rem 1.2rem; padding-top: 1rem; border-top: 2px dashed rgba(142, 27, 22, .3); }
+.harga-wrap { display: flex; flex-direction: column; }
+.harga-label { font-family: var(--font-tulis); font-size: 1.1rem; font-weight: 600; color: #8a6a58; line-height: 1; margin-bottom: .15rem; }
+.harga-tag { position: relative; display: inline-block; font-family: var(--font-judul); font-weight: 900; font-size: 1.28rem; color: var(--harga); background: var(--kuning-muda); padding: .22rem .95rem .22rem 1.55rem; clip-path: polygon(14px 0, 100% 0, 100% 100%, 14px 100%, 0 50%); white-space: nowrap; }
+.harga-tag::before { content: ''; position: absolute; left: 11px; top: 50%; width: 7px; height: 7px; margin-top: -3.5px; border-radius: 50%; background: #fff; box-shadow: inset 0 1px 2px rgba(0, 0, 0, .3); }
+
+/* =====================================================
+   KONTAK
+   ===================================================== */
+#kontak { padding: 5.5rem 0 5rem; }
+.kontak-grid { display: grid; grid-template-columns: 1fr; gap: 2.6rem; align-items: start; }
+@media (min-width: 920px) { .kontak-grid { grid-template-columns: 1fr 1fr; gap: 3.2rem; } }
+
+.kontak-nota-wrap { filter: drop-shadow(0 16px 16px rgba(43, 23, 16, .3)); }
+.kontak-nota { background: var(--kertas); padding: 1.8rem 1.6rem 2.6rem; border-radius: 8px 8px 0 0; -webkit-mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / 20px 100%; mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / 20px 100%; }
+.kontak-nota .judul-nota { font-family: var(--font-nota); font-weight: 700; text-transform: uppercase; letter-spacing: .1em; font-size: 1.4rem; text-align: center; color: var(--maroon); padding-bottom: .9rem; border-bottom: 2px dashed rgba(43, 23, 16, .45); margin-bottom: 1.2rem; }
+.k-item { display: flex; gap: 1rem; align-items: flex-start; padding: 1rem 0; border-bottom: 1px dotted rgba(43, 23, 16, .35); }
+.k-item:last-of-type { border-bottom: 0; }
+.k-ico { width: 46px; height: 46px; border-radius: 50%; background: var(--maroon); color: var(--kuning); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; box-shadow: 0 4px 0 var(--maroon-tua); }
+.k-item h4 { font-family: var(--font-judul); font-weight: 800; font-size: 1.1rem; color: var(--maroon); line-height: 1.2; margin-bottom: .15rem; }
+.k-item p { font-size: 1.42rem; color: #5A4034; }
+.k-item p.sosmed { font-weight: 800; color: var(--tinta); }
+.k-item .btn { margin-top: .6rem; }
+
+.jam-papan { position: relative; margin-top: 2.8rem; background: linear-gradient(135deg, #8F5E33, #6F4222 50%, #8F5E33); border-radius: 16px; padding: 1.5rem 1.5rem 1.3rem; color: var(--kuning-muda); box-shadow: 0 22px 30px -16px rgba(43, 23, 16, .7), inset 0 2px 0 rgba(255, 255, 255, .2); }
+.jam-papan::before, .jam-papan::after { content: ''; position: absolute; top: -28px; width: 3px; height: 30px; background: #5b3a22; }
+.jam-papan::before { left: 22%; transform: rotate(-12deg); transform-origin: bottom; }
+.jam-papan::after { right: 22%; transform: rotate(12deg); transform-origin: bottom; }
+.jam-papan h4 { font-family: var(--font-tulis); font-size: 2rem; font-weight: 700; line-height: 1; color: var(--kuning); margin-bottom: .6rem; display: flex; align-items: center; gap: .6rem; }
+.jam-papan table { width: 100%; border-collapse: collapse; font-size: 1.42rem; }
+.jam-papan td { padding: .6rem 0; border-bottom: 2px dotted rgba(255, 224, 138, .4); }
+.jam-papan tr:last-child td { border-bottom: 0; }
+.jam-papan td:last-child { text-align: right; font-weight: 800; color: #fff; padding-left: 1rem; }
+.jam-papan td.tutup { color: #FF9C8E; }
+
+.peta-bingkai { position: relative; background: #fff; padding: 12px; border-radius: 16px; transform: rotate(1.2deg); box-shadow: 0 26px 40px -18px rgba(43, 23, 16, .6); }
+.peta-bingkai .tape { top: -13px; left: 50%; transform: translateX(-50%) rotate(-2deg); background: rgba(142, 27, 22, .55); }
+.peta { width: 100%; height: 340px; border-radius: 8px; overflow: hidden; background: var(--kertas); }
+.peta iframe { width: 100%; height: 100%; border: 0; display: block; }
+.peta-link { margin-top: 1.6rem; }
+
+/* =====================================================
+   FOOTER & WA FLOAT
+   ===================================================== */
+footer { position: relative; background: var(--maroon); color: #FFE9C2; text-align: center; padding: 3.2rem 1.25rem 2.2rem; }
+footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 14px; background: repeating-linear-gradient(90deg, var(--kuning) 0 28px, var(--maroon-tua) 28px 56px); }
+.footer-ikon { display: flex; justify-content: center; gap: 1.1rem; color: var(--kuning); font-size: 1.2rem; margin-bottom: 1rem; opacity: .9; }
+footer p.f1 { font-size: 1.42rem; font-weight: 600; }
+footer p.f2 { font-family: var(--font-tulis); font-size: 1.3rem; font-weight: 600; color: var(--kuning-muda); margin-top: .4rem; }
+
+.wa-float { position: fixed; bottom: 22px; right: 22px; width: 58px; height: 58px; border-radius: 50%; background: linear-gradient(135deg, #25D366, #128C7E); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.9rem; text-decoration: none; z-index: 55; box-shadow: 0 12px 26px rgba(37, 211, 102, .5); transition: transform .25s ease; }
+.wa-float::before { content: ''; position: absolute; inset: 0; border-radius: 50%; border: 2px solid rgba(37, 211, 102, .8); animation: denyut 2.2s ease-out infinite; }
+@keyframes denyut { from { transform: scale(1); opacity: .9; } to { transform: scale(1.7); opacity: 0; } }
+.wa-float:hover { transform: scale(1.1) rotate(-6deg); }
+
+/* =====================================================
+   MODAL ADMIN
+   ===================================================== */
+#admin-modal { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 1rem; background: rgba(43, 23, 16, .72); backdrop-filter: blur(6px); }
+.modal-card { background: var(--krem); width: 100%; max-width: 680px; max-height: 90vh; border-radius: 26px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 40px 80px -20px rgba(0, 0, 0, .7); color: var(--tinta); }
+.modal-head { background: var(--maroon); color: var(--krem); padding: 1.2rem 1.5rem; display: flex; align-items: center; justify-content: space-between; position: relative; }
+.modal-head::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 6px; background: repeating-linear-gradient(90deg, var(--kuning) 0 20px, var(--maroon-tua) 20px 40px); }
+.modal-head h3 { font-family: var(--font-judul); font-weight: 800; font-size: 1.2rem; display: flex; align-items: center; gap: .6rem; }
+.modal-head h3 i { color: var(--kuning); }
+.modal-x { background: rgba(255, 244, 219, .15); color: var(--krem); border: 0; width: 34px; height: 34px; border-radius: 50%; font-size: 1.3rem; line-height: 1; cursor: pointer; transition: background .2s, transform .2s; }
+.modal-x:hover { background: var(--kuning); color: var(--maroon); transform: rotate(90deg); }
+.modal-body { padding: 1.6rem 1.5rem 1.8rem; overflow-y: auto; flex-grow: 1; }
+
+.auth-box { text-align: center; max-width: 340px; margin: 1.5rem auto; display: flex; flex-direction: column; gap: .9rem; }
+.auth-box > i { font-size: 3.2rem; color: var(--maroon); }
+.auth-box h4 { font-family: var(--font-judul); font-weight: 800; font-size: 1.3rem; color: var(--maroon); }
+.auth-box p.sm { font-size: 1.3rem; color: #7a5a48; }
+.auth-box input { text-align: center; letter-spacing: .3em; font-size: 1.25rem; }
+#pin-error { color: #C0261B; font-size: 1.3rem; font-weight: 700; }
+
+.inp { width: 100%; padding: .7rem .9rem; border: 2px solid #E7D3A6; border-radius: 12px; background: #fff; font-family: inherit; font-size: 1.42rem; color: var(--tinta); transition: border-color .2s, box-shadow .2s; }
+.inp:focus { outline: none; border-color: var(--kuning); box-shadow: 0 0 0 4px rgba(245, 184, 46, .3); }
+textarea.inp { resize: vertical; }
+.fld { display: block; font-size: 1.26rem; font-weight: 800; color: #6b4a35; margin-bottom: .3rem; }
+.adm-form { display: flex; flex-direction: column; gap: 1.2rem; }
+.adm-note { background: var(--kuning-muda); border: 1px dashed rgba(94, 16, 12, .5); color: var(--maroon-tua); font-size: 1.3rem; font-weight: 600; padding: .8rem 1rem; border-radius: 12px; }
+.adm-sec { display: flex; flex-direction: column; gap: .7rem; padding-bottom: 1.2rem; border-bottom: 2px dashed rgba(142, 27, 22, .25); }
+.adm-sec h4 { font-family: var(--font-judul); font-weight: 800; font-size: 1.05rem; color: var(--maroon); }
+.adm-actions { display: flex; gap: .8rem; }
+.adm-actions .btn { flex: 1; }
+.btn-abu { background: #E8DCC2; color: #5A4034; box-shadow: 0 4px 0 #cdbd9c; flex: 0 0 auto !important; font-size: 1.3rem; padding: .85rem 1.2rem; }
+.btn-abu:hover { background: #dccfae; }
+
+.adm-hint { font-size: 1.3rem; color: #7a5a48; line-height: 1.5; }
+        .adm-produk-list { display: flex; flex-direction: column; gap: .6rem; }
+        .adm-prod-row { display: flex; align-items: center; gap: .8rem; background: #fff; border: 2px solid #EFDFB8; border-radius: 14px; padding: .55rem .7rem; }
+        .adm-prod-row img { width: 54px; height: 54px; border-radius: 10px; object-fit: cover; background: var(--kertas); flex-shrink: 0; }
+        .adm-prod-row .info { flex: 1; min-width: 0; }
+        .adm-prod-row .info b { display: block; font-family: var(--font-judul); font-weight: 800; font-size: 1.48rem; color: var(--maroon); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .adm-prod-row .info span { font-size: 1.28rem; color: #7a5a48; font-weight: 600; }
+        .adm-prod-row .btn { flex-shrink: 0; }
+        .produk-editor { background: #fff; border: 2px dashed rgba(142, 27, 22, .45); border-radius: 18px; padding: 1.1rem; display: flex; flex-direction: column; gap: .8rem; }
+        .produk-editor h5 { font-family: var(--font-judul); font-weight: 800; font-size: 1.02rem; color: var(--maroon); }
+        .pe-grid { display: grid; grid-template-columns: 1fr; gap: .7rem; }
+        @media (min-width: 560px) { .pe-grid { grid-template-columns: 1fr 1fr; } }
+        .foto-edit { display: flex; align-items: center; gap: .9rem; flex-wrap: wrap; }
+        .foto-edit img { width: 96px; height: 96px; border-radius: 14px; object-fit: cover; background: var(--kertas); border: 2px solid #EFDFB8; }
+        .foto-edit .kolom { display: flex; flex-direction: column; gap: .4rem; font-size: 1.26rem; color: #7a5a48; font-weight: 600; }
+        .pe-error { color: #C0261B; font-size: 1.3rem; font-weight: 700; }
+        .pe-actions { display: flex; gap: .7rem; flex-wrap: wrap; }
+        .pe-actions .btn { flex: 1; }
+
+        @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="awning" aria-hidden="true"></div>
+        <div class="nav-inner">
+            <!-- Logo & Nama Usaha -->
+            <a href="#beranda" class="brand">
+                <img id="nav-logo" src="" alt="Logo Warung Emak Shodiq">
+                <div>
+                    <span id="nav-brand-title" class="brand-title">Warung Emak Shodiq</span>
+                    <span class="brand-sub">SMKS PGRI Singosari</span>
+                </div>
+            </a>
+
+            <!-- Menu Komputer / Desktop -->
+            <nav class="nav-desktop">
+                <a href="#beranda" class="nav-link">Beranda</a>
+                <a href="#tentang" class="nav-link">Tentang</a>
+                <a href="#produk" class="nav-link">Produk</a>
+                <a href="#kontak" class="nav-link">Kontak</a>
+                <button onclick="bukaAdminModal()" class="btn-admin"><i class="fa-solid fa-lock"></i> Admin</button>
+            </nav>
+
+            <!-- Tombol Menu HP / Mobile -->
+            <div class="nav-mobile-btns">
+                <button onclick="bukaAdminModal()" class="icon-btn dark" aria-label="Admin"><i class="fa-solid fa-lock"></i></button>
+                <button id="menu-btn" onclick="toggleMobileMenu()" class="icon-btn" aria-label="Buka Menu">
+                    <span class="sr-only">Buka Menu</span>
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Dropdown HP -->
+        <div id="mobile-menu" class="hidden">
+            <a href="#beranda" onclick="toggleMobileMenu()"><i class="fa-solid fa-house"></i> Beranda</a>
+            <a href="#tentang" onclick="toggleMobileMenu()"><i class="fa-solid fa-bowl-food"></i> Tentang</a>
+            <a href="#produk" onclick="toggleMobileMenu()"><i class="fa-solid fa-utensils"></i> Produk</a>
+            <a href="#kontak" onclick="toggleMobileMenu()"><i class="fa-solid fa-location-dot"></i> Kontak</a>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ================= BERANDA ================= -->
+        <section id="beranda" class="hero">
+            <i class="fa-solid fa-utensils doodle dd1" aria-hidden="true"></i>
+            <i class="fa-solid fa-mug-hot doodle dd2" aria-hidden="true"></i>
+            <i class="fa-solid fa-bowl-rice doodle dd3" aria-hidden="true"></i>
+            <i class="fa-solid fa-pepper-hot doodle dd4" aria-hidden="true"></i>
+            <i class="fa-solid fa-egg doodle dd5" aria-hidden="true"></i>
+
+            <div class="container hero-grid">
+                <div>
+                    <span id="home-label" class="papan-nama">Warung emak Shodiq</span>
+                    <h1 id="home-title">Warung Emak Shodiq</h1>
+                    <p id="home-slogan" class="hero-slogan">Tempat favorit warga SMK PGRI Singosari untuk menikmati makanan lezat, harga bersahabat, dan suasana penuh keakraban.</p>
+
+                    <div class="hero-btns">
+                        <a id="btn-wa-hero" href="#" onclick="pesanWhatsApp('Halo, saya ingin memesan dari Warung Emak Shodiq'); return false;" class="btn btn-merah">
+                            <i class="fa-brands fa-whatsapp"></i> Pesan via WhatsApp
+                        </a>
+                        <a href="#produk" class="btn btn-krem"><i class="fa-solid fa-utensils"></i> Lihat Produk</a>
+                    </div>
+
+                    <!-- 3 Fakta Singkat -->
+                    <div class="fakta-grid">
+                        <div class="kupon">
+                            <div class="ik"><i class="fa-solid fa-seedling"></i></div>
+                            <span id="fakta-1" class="tx">100% bahan Pilihan</span>
+                        </div>
+                        <div class="kupon">
+                            <div class="ik"><i class="fa-solid fa-shield-halved"></i></div>
+                            <span id="fakta-2" class="tx">Tanpa Bahan Pengawet Buatan</span>
+                        </div>
+                        <div class="kupon">
+                            <div class="ik"><i class="fa-solid fa-sun"></i></div>
+                            <span id="fakta-3" class="tx">Diproduksi Setiap Hari</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto Utama -->
+                <div class="foto-wrap">
+                    <div class="sunburst" aria-hidden="true"></div>
+                    <div class="polaroid">
+                        <span class="tape tape-1" aria-hidden="true"></span>
+                        <img id="main-photo" src="" alt="Foto Utama Warung Emak Shodiq">
+                        <div class="keterangan">Berdiri Sejak 1996 di SMK PGRI Singosari</div>
+                    </div>
+                    <div class="stempel" aria-hidden="true">
+                        <svg viewBox="0 0 120 120">
+                            <defs><path id="lingkar" d="M60,60 m-47,0 a47,47 0 1,1 94,0 a47,47 0 1,1 -94,0"/></defs>
+                            <text><textPath href="#lingkar" textLength="290" lengthAdjust="spacing">KANTIN SEKOLAH • SEJAK 1996 • ENAK • </textPath></text>
+                        </svg>
+                        <i class="fa-solid fa-bowl-rice"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pita menu berjalan (diisi otomatis dari daftar produk) -->
+        <div class="ticker" aria-hidden="true">
+            <div class="ticker-track" id="menu-ticker-track"></div>
+        </div>
+
+        <!-- ================= TENTANG ================= -->
+        <section id="tentang">
+            <div class="container">
+                <div class="papan-frame">
+                    <div class="papan">
+                        <i class="fa-solid fa-carrot chalk-doodle cd1" aria-hidden="true"></i>
+                        <i class="fa-solid fa-drumstick-bite chalk-doodle cd2" aria-hidden="true"></i>
+
+                        <div class="sec-head">
+                            <span class="sec-eyebrow"><i class="fa-solid fa-star"></i> Kenali kami <i class="fa-solid fa-star"></i></span>
+                            <h2 class="sec-title">Tentang Usaha</h2>
+                            <div class="rickrack"></div>
+                        </div>
+
+                        <div class="tentang-grid">
+                            <div>
+                                <p id="about-story" class="cerita">warung emak shodiq sudah berdiri mulai tahun 1996 di SMKS PGRI SINGOSARI sampai sekarang warung emak shodiq di dirikan oleh 2 orang yaitu emak shodiq dan pak redek untuk saat ini pak redek telah berstatus almarhum</p>
+
+                                <div class="nota-wrap">
+                                    <div class="nota">
+                                        <h3><i class="fa-solid fa-receipt"></i> Informasi Pengelola</h3>
+                                        <div class="nota-row"><b>Pemilik</b><span class="dots"></span><span>Emak Shodiq</span></div>
+                                        <div class="nota-row"><b>Tahun Berdiri</b><span class="dots"></span><span>1996</span></div>
+                                        <div class="nota-row"><b>Jumlah Karyawan</b><span class="dots"></span><span>2-3 org</span></div>
+                                        <div class="nota-foot">— Warung Emak Shodiq —</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 class="keunggulan-title">Keunggulan Kami</h3>
+                                <div id="about-advantages">
+                                    <div class="catatan">
+                                        <div class="nomor"><i class="fa-solid fa-leaf"></i></div>
+                                        <div>
+                                            <h4 id="keunggulan-1">bahan segar dan pilihan</h4>
+                                            <p>Dipilih langsung dari kualitas terbaik untuk kepuasan pelanggan.</p>
+                                        </div>
+                                    </div>
+                                    <div class="catatan">
+                                        <div class="nomor"><i class="fa-solid fa-pepper-hot"></i></div>
+                                        <div>
+                                            <h4 id="keunggulan-2">Bumbu rempah tradisional berkualitas</h4>
+                                            <p>Racikan resep istimewa sejak puluhan tahun lalu.</p>
+                                        </div>
+                                    </div>
+                                    <div class="catatan">
+                                        <div class="nomor"><i class="fa-solid fa-hand-sparkles"></i></div>
+                                        <div>
+                                            <h4 id="keunggulan-3">Proses higienis dan terjamin</h4>
+                                            <p>Dibuat secara bersih, sehat, dan selalu segar setiap hari.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PRODUK ================= -->
+        <section id="produk">
+            <div class="container">
+                <div class="sec-head">
+                    <span class="sec-eyebrow"><i class="fa-solid fa-utensils"></i> Menu andalan <i class="fa-solid fa-mug-hot"></i></span>
+                    <h2 class="sec-title">Daftar Produk &amp; Menu</h2>
+                    <div class="rickrack"></div>
+                    <p class="catatan-format">Format: Nama | Berat/isi | Harga | Deskripsi</p>
+                </div>
+
+                <!-- Grid Produk (3 Kolom Laptop, 2 Kolom Tablet, 1 Kolom HP) -->
+                <div id="produk-container" class="produk-grid">
+                    <!-- Diisi otomatis oleh JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= KONTAK ================= -->
+        <section id="kontak">
+            <div class="container">
+                <div class="sec-head">
+                    <span class="sec-eyebrow"><i class="fa-solid fa-bell-concierge"></i> Mampir, yuk! <i class="fa-solid fa-bell-concierge"></i></span>
+                    <h2 class="sec-title">Kontak &amp; Lokasi</h2>
+                    <div class="rickrack"></div>
+                </div>
+
+                <div class="kontak-grid">
+                    <!-- Informasi Kontak & Jam Buka -->
+                    <div>
+                        <div class="kontak-nota-wrap">
+                            <div class="kontak-nota">
+                                <div class="judul-nota">Nota Kontak Warung</div>
+
+                                <div class="k-item">
+                                    <div class="k-ico"><i class="fa-brands fa-whatsapp"></i></div>
+                                    <div>
+                                        <h4>WhatsApp</h4>
+                                        <p id="display-wa">0852-3037-5676</p>
+                                        <button onclick="pesanWhatsApp('Halo, saya ingin bertanya tentang Warung Emak Shodiq')" class="btn btn-merah btn-sm">
+                                            <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="k-item">
+                                    <div class="k-ico"><i class="fa-solid fa-location-dot"></i></div>
+                                    <div>
+                                        <h4>Alamat</h4>
+                                        <p id="display-address">Jl. Morotanjek No.206, Pangetan, Pagentan, Kec. Singosari, Kabupaten Malang, Jawa Timur 65153</p>
+                                    </div>
+                                </div>
+
+                                <div class="k-item">
+                                    <div class="k-ico"><i class="fa-solid fa-share-nodes"></i></div>
+                                    <div>
+                                        <h4>Media Sosial</h4>
+                                        <p id="display-sosmed" class="sosmed">@SMKSPGRISINGOSARI</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tabel Jam Buka -->
+                        <div class="jam-papan">
+                            <h4><i class="fa-regular fa-clock"></i> Jam Operasional</h4>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>Senin - Jumat</td>
+                                        <td id="display-hours">08.00 - 15.00 WIB</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sabtu - Minggu</td>
+                                        <td class="tutup">Tutup</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Peta Google Maps -->
+                    <div>
+                        <div class="peta-bingkai">
+                            <span class="tape" aria-hidden="true"></span>
+                            <div class="peta">
+                                <iframe
+                                    title="Peta Lokasi Warung Emak Shodiq"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.821731671802!2d112.6628906!3d-7.8928124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd62a22543d8a9b%3A0x475f4c58cf3c41cf!2sSMK%20PGRI%20Singosari!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+                                    width="100%"
+                                    height="100%"
+                                    style="border:0;"
+                                    allowfullscreen=""
+                                    loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                        </div>
+                        <a id="btn-gmaps-link" href="https://maps.app.goo.gl/qerDBrFjD5rAM7Tb8" target="_blank" rel="noopener noreferrer" class="btn btn-krem btn-block peta-link">
+                            <i class="fa-solid fa-map-location-dot"></i> Buka di Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-ikon" aria-hidden="true">
+            <i class="fa-solid fa-utensils"></i><i class="fa-solid fa-bowl-rice"></i><i class="fa-solid fa-mug-hot"></i><i class="fa-solid fa-pepper-hot"></i><i class="fa-solid fa-utensils"></i>
+        </div>
+        <p class="f1">© 2026 Warung Emak Shodiq · Website dibuat oleh kelompok 2 SMK PGRI Singosari.</p>
+        <p class="f2">Dibuat dengan cinta untuk memajukan UMKM sekolah</p>
+    </footer>
+
+    <a id="btn-wa-float" href="#" onclick="pesanWhatsApp('Halo, saya ingin memesan makanan dari Warung Emak Shodiq'); return false;" class="wa-float" title="Chat WhatsApp" aria-label="Chat WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- ================= MODAL ADMIN ================= -->
+    <div id="admin-modal" class="hidden">
+        <div class="modal-card">
+            <!-- Header Modal -->
+            <div class="modal-head">
+                <h3><i class="fa-solid fa-sliders"></i> Panel Admin Warung Emak</h3>
+                <button onclick="tutupAdminModal()" class="modal-x" aria-label="Tutup">&times;</button>
+            </div>
+
+            <!-- Body Modal (Login atau Form) -->
+            <div class="modal-body">
+
+                <!-- Form Auth Password -->
+                <div id="admin-auth-section" class="auth-box">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h4>Masukkan PIN Admin</h4>
+                    <p class="sm">Masukkan PIN keamanan untuk mengedit konten website.</p>
+                    <input type="password" id="admin-pin-input" placeholder="PIN (default: 1234)" class="inp">
+                    <button onclick="verifikasiPin()" class="btn btn-merah btn-block">Masuk</button>
+                    <p id="pin-error" class="hidden">PIN Salah! Silakan coba lagi.</p>
+                </div>
+
+                <!-- Form Edit Data -->
+                <div id="admin-form-section" class="hidden adm-form">
+                    <div class="adm-note">
+                        <i class="fa-solid fa-circle-info"></i> Semua perubahan akan langsung tersimpan secara permanen di browser.
+                    </div>
+
+                    <!-- Edit Header & Beranda -->
+                    <div class="adm-sec">
+                        <h4>1. Beranda &amp; Header</h4>
+                        <div>
+                            <label class="fld" for="edit-title">Judul Warung</label>
+                            <input type="text" id="edit-title" class="inp">
+                        </div>
+                        <div>
+                            <label class="fld" for="edit-slogan">Slogan</label>
+                            <textarea id="edit-slogan" rows="2" class="inp"></textarea>
+                        </div>
+                        <div>
+                            <label class="fld" for="edit-wa">Nomor WhatsApp Usaha</label>
+                            <input type="text" id="edit-wa" class="inp">
+                        </div>
+                    </div>
+
+                    <!-- Edit Fakta Singkat -->
+                    <div class="adm-sec">
+                        <h4>2. 3 Fakta Singkat</h4>
+                        <input type="text" id="edit-fakta-1" class="inp" placeholder="Fakta 1">
+                        <input type="text" id="edit-fakta-2" class="inp" placeholder="Fakta 2">
+                        <input type="text" id="edit-fakta-3" class="inp" placeholder="Fakta 3">
+                    </div>
+
+                    <!-- Edit Cerita & Keunggulan -->
+                    <div class="adm-sec">
+                        <h4>3. Cerita Warung &amp; Keunggulan</h4>
+                        <div>
+                            <label class="fld" for="edit-story">Cerita Singkat</label>
+                            <textarea id="edit-story" rows="3" class="inp"></textarea>
+                        </div>
+                        <label class="fld">3 Keunggulan Utama</label>
+                        <input type="text" id="edit-keunggulan-1" class="inp">
+                        <input type="text" id="edit-keunggulan-2" class="inp">
+                        <input type="text" id="edit-keunggulan-3" class="inp">
+                    </div>
+
+                    <!-- Edit Alamat & Kontak -->
+                    <div class="adm-sec">
+                        <h4>4. Kontak &amp; Operasional</h4>
+                        <div>
+                            <label class="fld" for="edit-address">Alamat</label>
+                            <input type="text" id="edit-address" class="inp">
+                        </div>
+                        <div>
+                            <label class="fld" for="edit-hours">Jam Buka</label>
+                            <input type="text" id="edit-hours" class="inp">
+                        </div>
+                        <div>
+                            <label class="fld" for="edit-sosmed">Media Sosial</label>
+                            <input type="text" id="edit-sosmed" class="inp">
+                        </div>
+                    </div>
+
+                    <!-- Kelola Produk -->
+                    <div class="adm-sec" id="adm-produk-sec">
+                        <h4>5. Kelola Produk &amp; Menu</h4>
+                        <p class="adm-hint">Ubah nama, berat/isi, harga, deskripsi, dan gambar tiap produk, atau tambah produk baru. Perubahan produk langsung tampil di website dan tersimpan di browser ini.</p>
+                        <div id="admin-produk-list" class="adm-produk-list"></div>
+                        <button type="button" onclick="bukaEditorProduk(-1)" class="btn btn-krem btn-block"><i class="fa-solid fa-plus"></i> Tambah Produk Baru</button>
+
+                        <div id="produk-editor" class="produk-editor hidden">
+                            <h5 id="pe-judul">Edit Produk</h5>
+                            <input type="hidden" id="pe-index" value="-1">
+                            <div class="pe-grid">
+                                <div>
+                                    <label class="fld" for="pe-nama">Nama Produk</label>
+                                    <input type="text" id="pe-nama" class="inp" placeholder="Contoh: Ayam Geprek">
+                                </div>
+                                <div>
+                                    <label class="fld" for="pe-berat">Berat / Isi</label>
+                                    <input type="text" id="pe-berat" class="inp" placeholder="Contoh: 250 gram">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="fld" for="pe-harga">Harga</label>
+                                <input type="text" id="pe-harga" class="inp" placeholder="Contoh: Rp 10.000">
+                            </div>
+                            <div>
+                                <label class="fld" for="pe-desk">Deskripsi</label>
+                                <textarea id="pe-desk" rows="3" class="inp" placeholder="Tulis deskripsi singkat produk"></textarea>
+                            </div>
+                            <div>
+                                <label class="fld">Gambar Produk</label>
+                                <div class="foto-edit">
+                                    <img id="pe-foto-preview" src="" alt="Pratinjau gambar produk">
+                                    <div class="kolom">
+                                        <label for="pe-foto-file" class="btn btn-krem btn-sm" style="cursor:pointer;"><i class="fa-solid fa-image"></i> Pilih / Ganti Gambar</label>
+                                        <input type="file" id="pe-foto-file" accept="image/*" class="sr-only" onchange="pilihFotoProduk(this)">
+                                        <span id="pe-foto-info">Format JPG / PNG. Ukuran otomatis dikecilkan.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p id="pe-error" class="pe-error hidden"></p>
+                            <div class="pe-actions">
+                                <button type="button" onclick="simpanProduk()" class="btn btn-merah btn-sm"><i class="fa-solid fa-floppy-disk"></i> Simpan Produk</button>
+                                <button type="button" onclick="tutupEditorProduk()" class="btn btn-abu btn-sm">Batal</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tombol Reset & Simpan -->
+                    <div class="adm-actions">
+                        <button onclick="simpanPerubahanAdmin()" class="btn btn-merah">
+                            <i class="fa-solid fa-floppy-disk"></i> Simpan Perubahan
+                        </button>
+                        <button onclick="resetKeAwal()" class="btn btn-abu">Reset Default</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* Asset Foto Asli Warung Emak Shodiq
+           Semua foto disimpan di folder "img/".
+           Path wajib diawali "img/" dan nama file harus sama persis
+           (termasuk spasi, huruf besar-kecil, dan ekstensi .jpg/.jpeg/.png). */
+        const ASSET_LOGO = 'img/logo.png';
+        const ASSET_FOTO_UTAMA = 'img/produk 4.jpeg';
+        const ASSET_AYAM_GEPREK = 'img/produk 1.jpeg';
+        const ASSET_NASI_CAMPUR = 'img/produk 2.jpg';
+        const ASSET_NASI_PECEL = 'img/produk 5.jpeg';
+        const ASSET_ES_DEGAN = 'img/produk 3.jpg';
+        const ASSET_ES_TEH = 'img/teh.jpg';
+        const ASSET_SOTO = 'img/produk 6.jpg';
+
+        /* DATA DEFAULT USAHA */
+        const DATA_DEFAULT = {
+            wa: "0852-3037-5676",
+            title: "Warung Emak Shodiq",
+            slogan: "Tempat favorit warga SMK PGRI Singosari untuk menikmati makanan lezat, harga bersahabat, dan suasana penuh keakraban.",
+            fakta1: "100% bahan Pilihan",
+            fakta2: "Tanpa Bahan Pengawet Buatan",
+            fakta3: "Diproduksi Setiap Hari",
+            story: "warung emak shodiq sudah berdiri mulai tahun 1996 di SMKS PGRI SINGOSARI sampai sekarang warung emak shodiq di dirikan oleh 2 orang yaitu emak shodiq dan pak redek untuk saat ini pak redek telah berstatus almarhum",
+            keunggulan1: "bahan segar dan pilihan",
+            keunggulan2: "Bumbu rempah tradisional berkualitas",
+            keunggulan3: "Proses higienis dan terjamin",
+            address: "Jl. Morotanjek No.206, Pangetan, Pagentan, Kec. Singosari, Kabupaten Malang, Jawa Timur 65153",
+            hours: "setiap senin - jum'at jam 08.00 - 15.00 WIB",
+            sosmed: "@SMKSPGRISINGOSARI",
+            logo: ASSET_LOGO,
+            fotoUtama: ASSET_FOTO_UTAMA,
+            produk: [
+                {
+                    nama: "Ayam Geprek",
+                    berat: "250 gram",
+                    harga: "Rp 10.000",
+                    deskripsi: "Ayam goreng crispy dengan perpaduan sambal mantab dan pelengkap segar.",
+                    foto: ASSET_AYAM_GEPREK
+                },
+                {
+                    nama: "Nasi Campur",
+                    berat: "250 gram",
+                    harga: "Rp 8.000",
+                    deskripsi: "Nasi putih hangat dengan aneka lauk komplit dan mie goreng gurih nikmat.",
+                    foto: ASSET_NASI_CAMPUR
+                },
+                {
+                    nama: "Nasi Pecel",
+                    berat: "250 gram",
+                    harga: "Rp 8.000",
+                    deskripsi: "Nasi pecel khas dengan sayuran segar, bumbu kacang gurih, telur pedas & tempe.",
+                    foto: ASSET_NASI_PECEL
+                },
+                {
+                    nama: "Soto / Rawon",
+                    berat: "250 gram",
+                    harga: "Rp 12.000",
+                    deskripsi: "Sajian berkuah hangat dengan potongan daging/krecek pilihan serta rempah khas.",
+                    foto: ASSET_SOTO
+                },
+                {
+                    nama: "Es Degan Susu",
+                    berat: "250 gram",
+                    harga: "Rp 5.000",
+                    deskripsi: "Minuman segar dari air kelapa muda alami yang dipadukan dengan susu creamy manis.",
+                    foto: ASSET_ES_DEGAN
+                },
+                {
+                    nama: "Es Teh Manis",
+                    berat: "250 gram",
+                    harga: "Rp 3.000",
+                    deskripsi: "Kesegaran es teh manis alami pereda dahaga disaat istirahat sekolah.",
+                    foto: ASSET_ES_TEH
+                }
+            ]
+        };
+
+        localStorage.removeItem('warung_emak_data');
+        let appData = DATA_DEFAULT;
+
+        /* ===== Produk: salinan bawaan + produk hasil edit admin (disimpan terpisah) ===== */
+        const DATA_ASLI = JSON.parse(JSON.stringify(DATA_DEFAULT));   // salinan murni untuk Reset Default
+        const PRODUK_DEFAULT = JSON.parse(JSON.stringify(DATA_DEFAULT.produk));
+        const KUNCI_PRODUK = 'warung_emak_produk';
+        (function muatProdukTersimpan() {
+            try {
+                const tersimpan = JSON.parse(localStorage.getItem(KUNCI_PRODUK));
+                if (Array.isArray(tersimpan) && tersimpan.length) appData.produk = tersimpan;
+            } catch (e) { /* abaikan data rusak, pakai produk bawaan */ }
+        })();
+
+        // Mencegah teks buatan admin merusak tampilan / kode halaman
+        function esc(teks) {
+            return String(teks == null ? '' : teks)
+                .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+        }
+
+        function pesanWhatsApp(pesan) {
+            const cleanWA = appData.wa.replace(/[^0-9]/g, '');
+            const waNumber = cleanWA.startsWith('0') ? '62' + cleanWA.slice(1) : cleanWA;
+            const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(pesan)}`;
+            window.open(url, '_blank');
+        }
+
+        function pesanProduk(idx) {
+            const p = appData.produk[idx];
+            if (p) pesanWhatsApp('Halo, saya mau pesan ' + p.nama);
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function renderApp() {
+            // Pasang penanganan error SEBELUM src diisi,
+            // agar gambar pengganti muncul jika file tidak ditemukan
+            const navLogo = document.getElementById('nav-logo');
+            navLogo.onerror = function() {
+                this.onerror = null;
+                this.src = 'https://placehold.co/100x100/8E1B16/FFF4DB?text=WES';
+            };
+            navLogo.src = appData.logo;
+
+            const mainPhoto = document.getElementById('main-photo');
+            mainPhoto.onerror = function() {
+                this.onerror = null;
+                this.src = 'https://placehold.co/600x700/8E1B16/FFF4DB?text=Warung+Emak+Shodiq';
+            };
+            mainPhoto.src = appData.fotoUtama;
+            
+            document.getElementById('nav-brand-title').textContent = appData.title;
+            document.getElementById('home-title').textContent = appData.title;
+            document.getElementById('home-slogan').textContent = appData.slogan;
+
+            document.getElementById('fakta-1').textContent = appData.fakta1;
+            document.getElementById('fakta-2').textContent = appData.fakta2;
+            document.getElementById('fakta-3').textContent = appData.fakta3;
+
+            document.getElementById('about-story').textContent = appData.story;
+            document.getElementById('keunggulan-1').textContent = appData.keunggulan1;
+            document.getElementById('keunggulan-2').textContent = appData.keunggulan2;
+            document.getElementById('keunggulan-3').textContent = appData.keunggulan3;
+
+            document.getElementById('display-wa').textContent = appData.wa;
+            document.getElementById('display-address').textContent = appData.address;
+            document.getElementById('display-hours').textContent = appData.hours;
+            document.getElementById('display-sosmed').textContent = appData.sosmed;
+
+            // Pita menu berjalan: otomatis mengikuti daftar produk
+            const trackMenu = document.getElementById('menu-ticker-track');
+            if (trackMenu) {
+                const potongan = appData.produk.map(p => `<span>${esc(p.nama)}</span><i class="fa-solid fa-star" aria-hidden="true"></i>`).join('');
+                trackMenu.innerHTML = potongan + potongan + potongan + potongan;
+            }
+
+            const container = document.getElementById('produk-container');
+            container.innerHTML = '';
+
+            appData.produk.forEach((p, idx) => {
+                const card = document.createElement('article');
+                card.className = "menu-card";
+                card.innerHTML = `
+                    <div class="menu-foto">
+                        <span class="tape tape-card" aria-hidden="true"></span>
+                        <img src="${esc(p.foto)}" alt="${esc(p.nama)}" loading="lazy"
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x300/8E1B16/FFF4DB?text=${encodeURIComponent(p.nama).replace(/'/g, '%27')}';">
+                        <span class="menu-berat"><i class="fa-solid fa-scale-balanced"></i> ${esc(p.berat)}</span>
+                    </div>
+                    <div class="menu-body">
+                        <h3 class="menu-nama">${esc(p.nama)}</h3>
+                        <p class="menu-desc">${esc(p.deskripsi)}</p>
+                    </div>
+                    <div class="menu-foot">
+                        <div class="harga-wrap">
+                            <span class="harga-label">Harga</span>
+                            <span class="harga-tag">${esc(p.harga)}</span>
+                        </div>
+                        <button onclick="pesanProduk(${idx})" class="btn btn-merah btn-sm">
+                            <i class="fa-brands fa-whatsapp"></i> Pesan
+                        </button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function bukaAdminModal() {
+            document.getElementById('admin-modal').classList.remove('hidden');
+        }
+
+        function tutupAdminModal() {
+            document.getElementById('admin-modal').classList.add('hidden');
+        }
+
+        function verifikasiPin() {
+            const pin = document.getElementById('admin-pin-input').value;
+            if (pin === "1234") {
+                document.getElementById('admin-auth-section').classList.add('hidden');
+                document.getElementById('admin-form-section').classList.remove('hidden');
+                isiFormAdmin();
+            } else {
+                document.getElementById('pin-error').classList.remove('hidden');
+            }
+        }
+
+        function isiFormAdmin() {
+            document.getElementById('edit-title').value = appData.title;
+            document.getElementById('edit-slogan').value = appData.slogan;
+            document.getElementById('edit-wa').value = appData.wa;
+
+            document.getElementById('edit-fakta-1').value = appData.fakta1;
+            document.getElementById('edit-fakta-2').value = appData.fakta2;
+            document.getElementById('edit-fakta-3').value = appData.fakta3;
+
+            document.getElementById('edit-story').value = appData.story;
+            document.getElementById('edit-keunggulan-1').value = appData.keunggulan1;
+            document.getElementById('edit-keunggulan-2').value = appData.keunggulan2;
+            document.getElementById('edit-keunggulan-3').value = appData.keunggulan3;
+
+            document.getElementById('edit-address').value = appData.address;
+            document.getElementById('edit-hours').value = appData.hours;
+            document.getElementById('edit-sosmed').value = appData.sosmed;
+
+            renderAdminProduk();
+        }
+
+        function simpanPerubahanAdmin() {
+            appData.title = document.getElementById('edit-title').value;
+            appData.slogan = document.getElementById('edit-slogan').value;
+            appData.wa = document.getElementById('edit-wa').value;
+
+            appData.fakta1 = document.getElementById('edit-fakta-1').value;
+            appData.fakta2 = document.getElementById('edit-fakta-2').value;
+            appData.fakta3 = document.getElementById('edit-fakta-3').value;
+
+            appData.story = document.getElementById('edit-story').value;
+            appData.keunggulan1 = document.getElementById('edit-keunggulan-1').value;
+            appData.keunggulan2 = document.getElementById('edit-keunggulan-2').value;
+            appData.keunggulan3 = document.getElementById('edit-keunggulan-3').value;
+
+            appData.address = document.getElementById('edit-address').value;
+            appData.hours = document.getElementById('edit-hours').value;
+            appData.sosmed = document.getElementById('edit-sosmed').value;
+
+            try {
+                localStorage.setItem('warung_emak_data', JSON.stringify(Object.assign({}, appData, { produk: undefined })));
+            } catch (e) { /* penyimpanan penuh: abaikan, tampilan tetap diperbarui */ }
+            renderApp();
+            tutupAdminModal();
+        }
+
+        function resetKeAwal() {
+            localStorage.removeItem('warung_emak_data');
+            localStorage.removeItem(KUNCI_PRODUK);
+            appData = JSON.parse(JSON.stringify(DATA_ASLI));
+            appData.produk = JSON.parse(JSON.stringify(PRODUK_DEFAULT));
+            tutupEditorProduk();
+            renderAdminProduk();
+            renderApp();
+            tutupAdminModal();
+        }
+
+        /* ================= KELOLA PRODUK (PANEL ADMIN) ================= */
+        let fotoProdukBaru = null;   // data gambar hasil unggahan (belum disimpan)
+
+        function simpanProdukKeStorage() {
+            try {
+                localStorage.setItem(KUNCI_PRODUK, JSON.stringify(appData.produk));
+                return true;
+            } catch (e) {
+                return false;
+            }
+        }
+
+        function renderAdminProduk() {
+            const wadah = document.getElementById('admin-produk-list');
+            if (!wadah) return;
+            wadah.innerHTML = '';
+            appData.produk.forEach((p, i) => {
+                const baris = document.createElement('div');
+                baris.className = 'adm-prod-row';
+                baris.innerHTML = `
+                    <img src="${esc(p.foto)}" alt="${esc(p.nama)}"
+                         onerror="this.onerror=null; this.src='https://placehold.co/100x100/8E1B16/FFF4DB?text=Menu';">
+                    <div class="info"><b>${esc(p.nama)}</b><span>${esc(p.harga)} · ${esc(p.berat)}</span></div>
+                    <button type="button" class="btn btn-krem btn-sm" onclick="bukaEditorProduk(${i})"><i class="fa-solid fa-pen"></i> Edit</button>
+                `;
+                wadah.appendChild(baris);
+            });
+        }
+
+        function tampilkanErrorProduk(pesan) {
+            const el = document.getElementById('pe-error');
+            el.textContent = pesan || '';
+            el.classList.toggle('hidden', !pesan);
+        }
+
+        function bukaEditorProduk(idx) {
+            const baru = idx < 0;
+            const p = baru ? { nama: '', berat: '', harga: '', deskripsi: '', foto: '' } : appData.produk[idx];
+            fotoProdukBaru = null;
+            document.getElementById('pe-index').value = idx;
+            document.getElementById('pe-judul').textContent = baru ? 'Tambah Produk Baru' : 'Edit Produk: ' + p.nama;
+            document.getElementById('pe-nama').value = p.nama;
+            document.getElementById('pe-berat').value = p.berat;
+            document.getElementById('pe-harga').value = p.harga;
+            document.getElementById('pe-desk').value = p.deskripsi;
+            document.getElementById('pe-foto-file').value = '';
+            document.getElementById('pe-foto-info').textContent = baru ? 'Pilih gambar produk (JPG / PNG). Ukuran otomatis dikecilkan.' : 'Gambar saat ini. Pilih gambar lain untuk menggantinya.';
+            const pratinjau = document.getElementById('pe-foto-preview');
+            pratinjau.onerror = function () { this.onerror = null; this.src = 'https://placehold.co/200x200/8E1B16/FFF4DB?text=Gambar'; };
+            pratinjau.src = p.foto || 'https://placehold.co/200x200/8E1B16/FFF4DB?text=Gambar';
+            tampilkanErrorProduk('');
+            const editor = document.getElementById('produk-editor');
+            editor.classList.remove('hidden');
+            editor.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            document.getElementById('pe-nama').focus({ preventScroll: true });
+        }
+
+        function tutupEditorProduk() {
+            const editor = document.getElementById('produk-editor');
+            if (editor) editor.classList.add('hidden');
+            fotoProdukBaru = null;
+        }
+
+        // Baca gambar, kecilkan (maks 900px) agar muat di penyimpanan browser
+        function pilihFotoProduk(input) {
+            const file = input.files && input.files[0];
+            if (!file) return;
+            if (!file.type || file.type.indexOf('image/') !== 0) {
+                tampilkanErrorProduk('File yang dipilih bukan gambar.');
+                input.value = '';
+                return;
+            }
+            tampilkanErrorProduk('');
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const img = new Image();
+                img.onload = function () {
+                    const maks = 900;
+                    const skala = Math.min(1, maks / Math.max(img.width, img.height));
+                    const canvas = document.createElement('canvas');
+                    canvas.width = Math.max(1, Math.round(img.width * skala));
+                    canvas.height = Math.max(1, Math.round(img.height * skala));
+                    const ctx = canvas.getContext('2d');
+                    ctx.fillStyle = '#ffffff';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    fotoProdukBaru = canvas.toDataURL('image/jpeg', 0.82);
+                    document.getElementById('pe-foto-preview').src = fotoProdukBaru;
+                    document.getElementById('pe-foto-info').textContent = 'Gambar baru dipilih: ' + file.name;
+                };
+                img.onerror = function () { tampilkanErrorProduk('Gambar tidak bisa dibaca. Coba file lain.'); };
+                img.src = e.target.result;
+            };
+            reader.onerror = function () { tampilkanErrorProduk('Gagal membaca file gambar.'); };
+            reader.readAsDataURL(file);
+        }
+
+        function simpanProduk() {
+            const idx = parseInt(document.getElementById('pe-index').value, 10);
+            const nama = document.getElementById('pe-nama').value.trim();
+            const berat = document.getElementById('pe-berat').value.trim();
+            const harga = document.getElementById('pe-harga').value.trim();
+            const deskripsi = document.getElementById('pe-desk').value.trim();
+
+            if (!nama) { tampilkanErrorProduk('Nama produk wajib diisi.'); return; }
+            if (!harga) { tampilkanErrorProduk('Harga wajib diisi.'); return; }
+
+            const lama = idx >= 0 ? appData.produk[idx] : null;
+            const produk = {
+                nama: nama,
+                berat: berat,
+                harga: harga,
+                deskripsi: deskripsi,
+                foto: fotoProdukBaru || (lama ? lama.foto : '')
+            };
+
+            if (idx >= 0) { appData.produk[idx] = produk; } else { appData.produk.push(produk); }
+
+            const tersimpan = simpanProdukKeStorage();
+            renderApp();
+            renderAdminProduk();
+            tutupEditorProduk();
+            if (!tersimpan) {
+                alert('Produk sudah tampil di website, tetapi penyimpanan browser penuh sehingga tidak bisa disimpan permanen. Coba gunakan gambar yang lebih kecil.');
+            }
+        }
+
+        window.onload = function() {
+            renderApp();
+        };
+    </script>
+</body>
+</html>
